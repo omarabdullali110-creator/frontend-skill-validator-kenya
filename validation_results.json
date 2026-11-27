@@ -1,0 +1,181 @@
+[
+  {
+    "candidate_id": "KE-REF-001",
+    "display_label": "Candidate A (Nairobi Urban Refugee \u2014 Missing University Transcripts)",
+    "location_hub": "Eastleigh / Nairobi",
+    "credential_status": "missing_documents_displacement",
+    "credential_handling_note": "Certificates or transcripts lost during displacement (e.g., from Somalia, South Sudan, DRC, Ethiopia, or Burundi). Evaluated via practical front-end evidence and RPL principles without score penalty.",
+    "work_access_status": "Refugee ID Held",
+    "kenya_onboarding_note": "Verify Refugee ID / work authorization pathway alongside remote portfolio opportunities.",
+    "portfolio_or_repo": "https://github.com/displaced-dev-ke/nairobi-market-tracker",
+    "readiness_score_pct": 85.0,
+    "readiness_tier": "Ready for Hiring / Technical Screening",
+    "recommended_next_step": "Recommend directly to Kenya tech employers, remote fellowships, or paid freelance projects without waiting for physical certificates.",
+    "reviewer_notes": "Clean semantic HTML and mobile-first CSS grid; JavaScript fetch error handling needs one short bridging exercise.",
+    "competencies": [
+      {
+        "id": "html_accessibility",
+        "name": "Semantic HTML & Accessibility",
+        "score": 2,
+        "max_score": 2.0,
+        "weight_pct": 20.0,
+        "status": "Met"
+      },
+      {
+        "id": "css_responsive",
+        "name": "Responsive CSS, Flexbox/Grid & Low-Bandwidth UI",
+        "score": 2,
+        "max_score": 2.0,
+        "weight_pct": 25.0,
+        "status": "Met"
+      },
+      {
+        "id": "js_interactivity_data",
+        "name": "JavaScript Interactivity, State & API/Data Handling",
+        "score": 1,
+        "max_score": 2.0,
+        "weight_pct": 30.0,
+        "status": "Partial Gap"
+      },
+      {
+        "id": "git_portfolio_delivery",
+        "name": "Git/GitHub Workflow & Live Portfolio Delivery",
+        "score": 2,
+        "max_score": 2.0,
+        "weight_pct": 25.0,
+        "status": "Met"
+      }
+    ],
+    "bridging_plan": [
+      {
+        "competency": "JavaScript Interactivity, State & API/Data Handling",
+        "current_score": "1/2.0",
+        "priority": "Medium",
+        "action": "Build an interactive Kenyan SME or community resource finder with live search, category filtering, localStorage, and API error handling."
+      }
+    ]
+  },
+  {
+    "candidate_id": "KE-REF-002",
+    "display_label": "Candidate B (Kakuma / Kalobeyei Hub Graduate \u2014 Unverified Foreign Diploma)",
+    "location_hub": "Kakuma / Kalobeyei",
+    "credential_status": "unverified_foreign_credential",
+    "credential_handling_note": "Foreign diploma or technical certificate held but awaiting formal KNQA (Kenya National Qualifications Authority) equation/recognition. Treated as background context while validating live coding artifacts.",
+    "work_access_status": "Refugee ID Held",
+    "kenya_onboarding_note": "Verify Refugee ID / work authorization pathway alongside remote portfolio opportunities.",
+    "portfolio_or_repo": "https://github.com/displaced-dev-ke/clinic-queue-ui",
+    "readiness_score_pct": 100.0,
+    "readiness_tier": "Ready for Hiring / Technical Screening",
+    "recommended_next_step": "Recommend directly to Kenya tech employers, remote fellowships, or paid freelance projects without waiting for physical certificates.",
+    "reviewer_notes": "Holds foreign IT diploma awaiting KNQA recognition, but live GitHub projects prove full junior front-end readiness.",
+    "competencies": [
+      {
+        "id": "html_accessibility",
+        "name": "Semantic HTML & Accessibility",
+        "score": 2,
+        "max_score": 2.0,
+        "weight_pct": 20.0,
+        "status": "Met"
+      },
+      {
+        "id": "css_responsive",
+        "name": "Responsive CSS, Flexbox/Grid & Low-Bandwidth UI",
+        "score": 2,
+        "max_score": 2.0,
+        "weight_pct": 25.0,
+        "status": "Met"
+      },
+      {
+        "id": "js_interactivity_data",
+        "name": "JavaScript Interactivity, State & API/Data Handling",
+        "score": 2,
+        "max_score": 2.0,
+        "weight_pct": 30.0,
+        "status": "Met"
+      },
+      {
+        "id": "git_portfolio_delivery",
+        "name": "Git/GitHub Workflow & Live Portfolio Delivery",
+        "score": 2,
+        "max_score": 2.0,
+        "weight_pct": 25.0,
+        "status": "Met"
+      }
+    ],
+    "bridging_plan": []
+  },
+  {
+    "candidate_id": "KE-REF-003",
+    "display_label": "Candidate C (Dadaab Digital Learner \u2014 Self-Taught Portfolio)",
+    "location_hub": "Dadaab",
+    "credential_status": "camp_or_urban_self_taught",
+    "credential_handling_note": "Skills acquired through Kakuma, Dadaab, Kalobeyei, or urban Nairobi digital hubs and self-study without formal degrees. Evaluated directly on code quality and live builds.",
+    "work_access_status": "Pending Documentation",
+    "kenya_onboarding_note": "Candidates awaiting updated Refugee ID or work permit endorsement can begin remote freelancing, open-source portfolio building, or stipended fellowship tracks while legal/admin steps complete.",
+    "portfolio_or_repo": "Local offline HTML/CSS/JS practice folder",
+    "readiness_score_pct": 22.5,
+    "readiness_tier": "Foundational Upskilling Track",
+    "recommended_next_step": "Place into structured PLP / community hub front-end sprints focusing on JavaScript fundamentals and GitHub portfolio publishing.",
+    "reviewer_notes": "Strong motivation and basic HTML/CSS structure; needs structured JS interactivity and GitHub hosting support.",
+    "competencies": [
+      {
+        "id": "html_accessibility",
+        "name": "Semantic HTML & Accessibility",
+        "score": 1,
+        "max_score": 2.0,
+        "weight_pct": 20.0,
+        "status": "Partial Gap"
+      },
+      {
+        "id": "css_responsive",
+        "name": "Responsive CSS, Flexbox/Grid & Low-Bandwidth UI",
+        "score": 1,
+        "max_score": 2.0,
+        "weight_pct": 25.0,
+        "status": "Partial Gap"
+      },
+      {
+        "id": "js_interactivity_data",
+        "name": "JavaScript Interactivity, State & API/Data Handling",
+        "score": 0,
+        "max_score": 2.0,
+        "weight_pct": 30.0,
+        "status": "Priority Gap"
+      },
+      {
+        "id": "git_portfolio_delivery",
+        "name": "Git/GitHub Workflow & Live Portfolio Delivery",
+        "score": 0,
+        "max_score": 2.0,
+        "weight_pct": 25.0,
+        "status": "Priority Gap"
+      }
+    ],
+    "bridging_plan": [
+      {
+        "competency": "Semantic HTML & Accessibility",
+        "current_score": "1/2.0",
+        "priority": "Medium",
+        "action": "Build a 2-page accessible community service portal form using semantic HTML5 tags and test keyboard navigation."
+      },
+      {
+        "competency": "Responsive CSS, Flexbox/Grid & Low-Bandwidth UI",
+        "current_score": "1/2.0",
+        "priority": "Medium",
+        "action": "Build a mobile-first responsive product/service directory page tested on 360px and 1280px viewports with lightweight CSS."
+      },
+      {
+        "competency": "JavaScript Interactivity, State & API/Data Handling",
+        "current_score": "0/2.0",
+        "priority": "High",
+        "action": "Build an interactive Kenyan SME or community resource finder with live search, category filtering, localStorage, and API error handling."
+      },
+      {
+        "competency": "Git/GitHub Workflow & Live Portfolio Delivery",
+        "current_score": "0/2.0",
+        "priority": "High",
+        "action": "Publish 2 front-end projects on GitHub with clear README documentation, screenshots, and a live hosted link."
+      }
+    ]
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "role_title": "Front-End Web Developer (Kenya & Remote Market Ready)",
+  "context": "Kenya Refugee Inclusion & Recognition of Prior Learning (RPL) Pathway",
+  "sdg_alignment": [
+    "SDG 4: Quality Education & Lifelong Learning",
+    "SDG 8: Decent Work and Economic Growth",
+    "SDG 10: Reduced Inequalities"
+  ],
+  "target_score_per_skill": 2,
+  "readiness_thresholds": {
+    "placement_ready_min_pct": 80.0,
+    "short_bridging_min_pct": 55.0
+  },
+  "credential_status_notes": {
+    "missing_documents_displacement": "Certificates or transcripts lost during displacement (e.g., from Somalia, South Sudan, DRC, Ethiopia, or Burundi). Evaluated via practical front-end evidence and RPL principles without score penalty.",
+    "unverified_foreign_credential": "Foreign diploma or technical certificate held but awaiting formal KNQA (Kenya National Qualifications Authority) equation/recognition. Treated as background context while validating live coding artifacts.",
+    "camp_or_urban_self_taught": "Skills acquired through Kakuma, Dadaab, Kalobeyei, or urban Nairobi digital hubs and self-study without formal degrees. Evaluated directly on code quality and live builds.",
+    "partial_records": "Partial academic transcripts or bootcamp records available; paired with targeted practical rubric checks."
+  },
+  "kenya_onboarding_notes": {
+    "Refugee ID / Alien Card": "Under the Kenya Refugees Act, 2021, refugees with valid Refugee ID cards can pursue formal employment, business permits, and digital/remote contracting.",
+    "Pending Documentation": "Candidates awaiting updated Refugee ID or work permit endorsement can begin remote freelancing, open-source portfolio building, or stipended fellowship tracks while legal/admin steps complete."
+  },
+  "competencies": [
+    {
+      "id": "html_accessibility",
+      "name": "Semantic HTML & Accessibility",
+      "weight": 0.2,
+      "evidence_examples": [
+        "Semantic landmarks (<main>, <nav>, <section>, <article>)",
+        "Accessible form labels, alt attributes, and mobile-friendly structure"
+      ],
+      "bridging_action": "Build a 2-page accessible community service portal form using semantic HTML5 tags and test keyboard navigation."
+    },
+    {
+      "id": "css_responsive",
+      "name": "Responsive CSS, Flexbox/Grid & Low-Bandwidth UI",
+      "weight": 0.25,
+      "evidence_examples": [
+        "Mobile-first layouts using Flexbox or CSS Grid (360px mobile to 1280px desktop)",
+        "Lightweight assets and clean typography suitable for mobile data users in Kenya"
+      ],
+      "bridging_action": "Build a mobile-first responsive product/service directory page tested on 360px and 1280px viewports with lightweight CSS."
+    },
+    {
+      "id": "js_interactivity_data",
+      "name": "JavaScript Interactivity, State & API/Data Handling",
+      "weight": 0.3,
+      "evidence_examples": [
+        "DOM manipulation, search/filter logic, and client-side form validation",
+        "Fetching JSON data with clean loading and offline/error states"
+      ],
+      "bridging_action": "Build an interactive Kenyan SME or community resource finder with live search, category filtering, localStorage, and API error handling."
+    },
+    {
+      "id": "git_portfolio_delivery",
+      "name": "Git/GitHub Workflow & Live Portfolio Delivery",
+      "weight": 0.25,
+      "evidence_examples": [
+        "Structured GitHub repository with clear README and setup steps",
+        "Deployed live demo (GitHub Pages/Netlify/Vercel) or reproducible local build"
+      ],
+      "bridging_action": "Publish 2 front-end projects on GitHub with clear README documentation, screenshots, and a live hosted link."
+    }
+  ]
+}

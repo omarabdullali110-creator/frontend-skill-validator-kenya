@@ -1,0 +1,47 @@
+[
+  {
+    "candidate_id": "KE-REF-001",
+    "display_label": "Candidate A (Nairobi Urban Refugee \u2014 Missing University Transcripts)",
+    "location_hub": "Eastleigh / Nairobi",
+    "credential_status": "missing_documents_displacement",
+    "work_access_status": "Refugee ID Held",
+    "portfolio_url_or_repo": "https://github.com/displaced-dev-ke/nairobi-market-tracker",
+    "skill_scores": {
+      "html_accessibility": 2,
+      "css_responsive": 2,
+      "js_interactivity_data": 1,
+      "git_portfolio_delivery": 2
+    },
+    "reviewer_notes": "Clean semantic HTML and mobile-first CSS grid; JavaScript fetch error handling needs one short bridging exercise."
+  },
+  {
+    "candidate_id": "KE-REF-002",
+    "display_label": "Candidate B (Kakuma / Kalobeyei Hub Graduate \u2014 Unverified Foreign Diploma)",
+    "location_hub": "Kakuma / Kalobeyei",
+    "credential_status": "unverified_foreign_credential",
+    "work_access_status": "Refugee ID Held",
+    "portfolio_url_or_repo": "https://github.com/displaced-dev-ke/clinic-queue-ui",
+    "skill_scores": {
+      "html_accessibility": 2,
+      "css_responsive": 2,
+      "js_interactivity_data": 2,
+      "git_portfolio_delivery": 2
+    },
+    "reviewer_notes": "Holds foreign IT diploma awaiting KNQA recognition, but live GitHub projects prove full junior front-end readiness."
+  },
+  {
+    "candidate_id": "KE-REF-003",
+    "display_label": "Candidate C (Dadaab Digital Learner \u2014 Self-Taught Portfolio)",
+    "location_hub": "Dadaab",
+    "credential_status": "camp_or_urban_self_taught",
+    "work_access_status": "Pending Documentation",
+    "portfolio_url_or_repo": "Local offline HTML/CSS/JS practice folder",
+    "skill_scores": {
+      "html_accessibility": 1,
+      "css_responsive": 1,
+      "js_interactivity_data": 0,
+      "git_portfolio_delivery": 0
+    },
+    "reviewer_notes": "Strong motivation and basic HTML/CSS structure; needs structured JS interactivity and GitHub hosting support."
+  }
+]
