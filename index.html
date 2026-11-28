@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Skill Validator — Kenya</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --surface: #111827;
+      --surface-2: #1a2234;
+      --border: #263147;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --green: #10b981;
+      --green-bg: rgba(16, 185, 129, 0.14);
+      --amber: #f59e0b;
+      --amber-bg: rgba(245, 158, 11, 0.14);
+      --red: #ef4444;
+      --red-bg: rgba(239, 68, 68, 0.14);
+      --blue: #3b82f6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      padding: 2rem 1rem 4rem;
+    }
+    .container { max-width: 1120px; margin: 0 auto; }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .pill {
+      display: inline-block;
+      background: var(--green-bg);
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.03em;
+    }
+    h1 { font-size: 1.95rem; font-weight: 800; }
+    .subtitle { color: var(--muted); max-width: 640px; margin-top: 0.35rem; }
+    .presets { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: 0.15s ease;
+    }
+    .btn-preset {
+      background: var(--surface-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 0.5rem 0.85rem;
+      font-size: 0.85rem;
+    }
+    .btn-preset:hover { border-color: var(--green); color: var(--green); }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+    .card h2 {
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.65rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .form-group { margin-bottom: 1rem; }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #d1d5db;
+      margin-bottom: 0.35rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.65rem 0.8rem;
+      font-size: 0.92rem;
+      font-family: inherit;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--green);
+    }
+    .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+    .checks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.55rem;
+      margin-top: 0.35rem;
+    }
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 0.55rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .check-item input { width: auto; accent-color: var(--green); }
+    .btn-primary {
+      width: 100%;
+      background: var(--green);
+      color: #052e16;
+      border: none;
+      padding: 0.85rem;
+      font-size: 1rem;
+      font-weight: 800;
+      margin-top: 0.5rem;
+    }
+    .btn-primary:hover { filter: brightness(1.08); }
+
+    /* Results Panel */
+    .score-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.15rem 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .score-num { font-size: 2.3rem; font-weight: 800; line-height: 1; }
+    .verdict {
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .v-pass { background: var(--green-bg); color: var(--green); }
+    .v-mid { background: var(--amber-bg); color: var(--amber); }
+    .v-fail { background: var(--red-bg); color: var(--red); }
+
+    .metric { margin-bottom: 0.9rem; }
+    .metric-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.86rem;
+      margin-bottom: 0.3rem;
+    }
+    .bar-bg {
+      height: 8px;
+      background: var(--bg);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      background: var(--green);
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+    .feedback-list {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .feedback-list h3 { font-size: 0.95rem; margin-bottom: 0.6rem; color: #e5e7eb; }
+    .feedback-list li {
+      list-style: none;
+      font-size: 0.88rem;
+      color: #d1d5db;
+      padding: 0.45rem 0.65rem;
+      background: var(--bg);
+      border-left: 3px solid var(--green);
+      border-radius: 4px;
+      margin-bottom: 0.45rem;
+    }
+    .feedback-list li.warn { border-left-color: var(--amber); }
+
+    .leaderboard { margin-top: 2rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th, td {
+      text-align: left;
+      padding: 0.75rem 0.85rem;
+      border-bottom: 1px solid var(--border);
+    }
+    th { color: var(--muted); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <span class="pill">🇰🇪 KENYA TECH TALENT VERIFICATION</span>
+        <h1>Frontend Skill Validator</h1>
+        <p class="subtitle">
+          Evaluate frontend candidates against standardized rubric criteria: semantic HTML/CSS, JavaScript architecture, live deployment proof, accessibility, and performance.
+        </p>
+      </div>
+      <div class="presets">
+        <button class="btn-preset" onclick="loadPreset('senior')">Load Strong Candidate</button>
+        <button class="btn-preset" onclick="loadPreset('junior')">Load Junior Candidate</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Input Form -->
+      <section class="card">
+        <h2>1. Candidate Submission</h2>
+        <div class="row-2">
+          <div class="form-group">
+            <label for="name">Candidate Name</label>
+            <input id="name" type="text" value="Amina Wanjiku" />
+          </div>
+          <div class="form-group">
+            <label for="city">Location</label>
+            <input id="city" type="text" value="Nairobi, Kenya" />
+          </div>
+        </div>
+
+        <div class="row-2">
+          <div class="form-group">
+            <label for="repoUrl">GitHub Repository URL</label>
+            <input id="repoUrl" type="url" value="https://github.com/amina-dev/kenya-transit-ui" />
+          </div>
+          <div class="form-group">
+            <label for="liveUrl">Live Deployed URL</label>
+            <input id="liveUrl" type="url" value="https://kenya-transit-ui.vercel.app" />
+          </div>
+        </div>
+
+        <div class="row-2">
+          <div class="form-group">
+            <label for="stack">Primary Stack</label>
+            <select id="stack">
+              <option value="vanilla">HTML5 + CSS3 + Modern JS (ES6+)</option>
+              <option value="react">React / Next.js + TypeScript</option>
+              <option value="vue">Vue / Tailwind CSS</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="lighthouse">Lighthouse Performance Score (0–100)</label>
+            <input id="lighthouse" type="number" min="0" max="100" value="92" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Verified Engineering Evidence</label>
+          <div class="checks">
+            <label class="check-item"><input type="checkbox" id="chkResponsive" checked /> Mobile-First Responsive</label>
+            <label class="check-item"><input type="checkbox" id="chkA11y" checked /> Semantic HTML & ARIA</label>
+            <label class="check-item"><input type="checkbox" id="chkApi" checked /> Live REST API Integration</label>
+            <label class="check-item"><input type="checkbox" id="chkTests" /> Unit / E2E Tests Included</label>
+            <label class="check-item"><input type="checkbox" id="chkReadme" checked /> Clear README & Setup</label>
+            <label class="check-item"><input type="checkbox" id="chkCleanGit" checked /> Clean Commit History</label>
+          </div>
+        </div>
+
+        <button class="btn-primary" onclick="evaluateCandidate()">Run Skill Validation</button>
+      </section>
+
+      <!-- Live Evaluation Output -->
+      <section class="card">
+        <h2>2. Live Rubric Evaluation</h2>
+        <div class="score-banner">
+          <div>
+            <div style="font-size:0.82rem; color:var(--muted);" id="resCandidate">Amina Wanjiku • Nairobi, Kenya</div>
+            <div class="score-num" id="resTotal">88 / 100</div>
+          </div>
+          <span class="verdict v-pass" id="resBadge">VERIFIED • HIRE READY</span>
+        </div>
+
+        <div id="breakdown"></div>
+
+        <div class="feedback-list">
+          <h3>Automated Reviewer Notes</h3>
+          <ul id="feedbackItems"></ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- Evaluated Candidates Log -->
+    <section class="card leaderboard">
+      <h2>3. Evaluated Cohort Log (Session Results)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Candidate</th>
+            <th>Location</th>
+            <th>Stack</th>
+            <th>Score</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="cohortBody"></tbody>
+      </table>
+    </section>
+  </div>
+
+  <script>
+    const cohort = [];
+
+    function loadPreset(type) {
+      if (type === 'senior') {
+        document.getElementById('name').value = 'Amina Wanjiku';
+        document.getElementById('city').value = 'Nairobi, Kenya';
+        document.getElementById('repoUrl').value = 'https://github.com/amina-dev/kenya-transit-ui';
+        document.getElementById('liveUrl').value = 'https://kenya-transit-ui.vercel.app';
+        document.getElementById('stack').value = 'react';
+        document.getElementById('lighthouse').value = 94;
+        document.getElementById('chkResponsive').checked = true;
+        document.getElementById('chkA11y').checked = true;
+        document.getElementById('chkApi').checked = true;
+        document.getElementById('chkTests').checked = true;
+        document.getElementById('chkReadme').checked = true;
+        document.getElementById('chkCleanGit').checked = true;
+      } else {
+        document.getElementById('name').value = 'Brian Otieno';
+        document.getElementById('city').value = 'Kisumu, Kenya';
+        document.getElementById('repoUrl').value = 'https://github.com/brian-codes/portfolio-v1';
+        document.getElementById('liveUrl').value = '';
+        document.getElementById('stack').value = 'vanilla';
+        document.getElementById('lighthouse').value = 68;
+        document.getElementById('chkResponsive').checked = true;
+        document.getElementById('chkA11y').checked = false;
+        document.getElementById('chkApi').checked = false;
+        document.getElementById('chkTests').checked = false;
+        document.getElementById('chkReadme').checked = true;
+        document.getElementById('chkCleanGit').checked = false;
+      }
+      evaluateCandidate();
+    }
+
+    function evaluateCandidate() {
+      const name = document.getElementById('name').value.trim() || 'Unnamed Candidate';
+      const city = document.getElementById('city').value.trim() || 'Kenya';
+      const repoUrl = document.getElementById('repoUrl').value.trim();
+      const liveUrl = document.getElementById('liveUrl').value.trim();
+      const stack = document.getElementById('stack').options[document.getElementById('stack').selectedIndex].text;
+      const lighthouse = Math.max(0, Math.min(100, Number(document.getElementById('lighthouse').value) || 0));
+
+      const responsive = document.getElementById('chkResponsive').checked;
+      const a11y = document.getElementById('chkA11y').checked;
+      const api = document.getElementById('chkApi').checked;
+      const tests = document.getElementById('chkTests').checked;
+      const readme = document.getElementById('chkReadme').checked;
+      const cleanGit = document.getElementById('chkCleanGit').checked;
+
+      // Rubric categories (Total = 100)
+      const uiScore = (responsive ? 15 : 4) + (a11y ? 10 : 0); // max 25
+      const jsScore = (api ? 15 : 5) + (tests ? 10 : 0);        // max 25
+      const deployScore = (liveUrl.startsWith('http') ? 15 : 0) + (repoUrl.startsWith('http') ? 10 : 0); // max 25
+      const perfScore = Math.round((lighthouse / 100) * 15);    // max 15
+      const docsScore = (readme ? 5 : 0) + (cleanGit ? 5 : 0);  // max 10
+
+      const total = uiScore + jsScore + deployScore + perfScore + docsScore;
+
+      // Update Header
+      document.getElementById('resCandidate').textContent = `${name} • ${city}`;
+      document.getElementById('resTotal').textContent = `${total} / 100`;
+
+      const badge = document.getElementById('resBadge');
+      if (total >= 80) {
+        badge.textContent = 'VERIFIED • HIRE READY';
+        badge.className = 'verdict v-pass';
+      } else if (total >= 60) {
+        badge.textContent = 'PROVISIONAL • NEEDS REVIEW';
+        badge.className = 'verdict v-mid';
+      } else {
+        badge.textContent = 'NOT VERIFIED • GAPS FOUND';
+        badge.className = 'verdict v-fail';
+      }
+
+      // Render Breakdown Bars
+      const categories = [
+        { label: 'UI, Responsiveness & Accessibility', score: uiScore, max: 25 },
+        { label: 'JavaScript Logic, API & Testing', score: jsScore, max: 25 },
+        { label: 'Live Deployment & Source Control', score: deployScore, max: 25 },
+        { label: 'Web Performance (Lighthouse)', score: perfScore, max: 15 },
+        { label: 'Documentation & Git Hygiene', score: docsScore, max: 10 }
+      ];
+
+      document.getElementById('breakdown').innerHTML = categories.map(c => `
+        <div class="metric">
+          <div class="metric-top">
+            <span>${c.label}</span>
+            <strong>${c.score} / ${c.max}</strong>
+          </div>
+          <div class="bar-bg">
+            <div class="bar-fill" style="width:${(c.score / c.max) * 100}%"></div>
+          </div>
+        </div>
+      `).join('');
+
+      // Generate Actionable Notes
+      const notes = [];
+      if (liveUrl.startsWith('http')) {
+        notes.push({ text: `Live production URL verified (${liveUrl}).`, warn: false });
+      } else {
+        notes.push({ text: 'Missing live deployed URL (-15 pts). Judges require a working public link.', warn: true });
+      }
+      if (!a11y) notes.push({ text: 'Add semantic landmarks and ARIA labels to improve accessibility score.', warn: true });
+      if (!tests) notes.push({ text: 'No automated tests detected; adding basic unit tests boosts reliability.', warn: true });
+      if (lighthouse >= 85) notes.push({ text: `Strong Lighthouse performance (${lighthouse}/100) suited for mobile networks.`, warn: false });
+
+      document.getElementById('feedbackItems').innerHTML = notes
+        .map(n => `<li class="${n.warn ? 'warn' : ''}">${n.text}</li>`)
+        .join('');
+
+      // Update Cohort Table
+      const existingIdx = cohort.findIndex(item => item.name.toLowerCase() === name.toLowerCase());
+      const entry = { name, city, stack, total, status: badge.textContent };
+      if (existingIdx >= 0) cohort[existingIdx] = entry;
+      else cohort.unshift(entry);
+
+      document.getElementById('cohortBody').innerHTML = cohort.map(row => `
+        <tr>
+          <td><strong>${row.name}</strong></td>
+          <td>${row.city}</td>
+          <td>${row.stack}</td>
+          <td><strong>${row.total}/100</strong></td>
+          <td>${row.status}</td>
+        </tr>
+      `).join('');
+    }
+
+    evaluateCandidate();
+  </script>
+</body>
+</html>
